@@ -1,0 +1,73 @@
+<head>
+    <html lang='en'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Stephane Assadourian's Home Page">
+    <title>Informations about genetic algorithms</title>
+    <link href="main.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <a href="index.html" title="Home">
+                <img class="navbar-brand navbar-left" src="dna.jpg"></img>
+            </a>
+            <ul class="nav nav-pills navbar-left">
+                <li><a href="index.html">Demo</a></li>
+                <li><a href="info.html">Genetic Algorithms</a></li>
+            </ul>
+            <ul class="nav nav-pills navbar-right">
+                <li><a href="info.html">Informations</a></li>
+                <li><a href="index.html" data-toggle="dropdown">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="story.html">Story</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="www.facebook.com">Facebook</a></li>
+                        <li><a href="www.twitter.com">Twitter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+    <h2>What does it do ?</h2>
+    <p>
+        In a nutshell, it finds a solution to an optimization problem.
+        <br>
+        Here are the algorithm's main components :
+    </p>
+    <ul>
+        <li><h3>Initialization</h3></li>
+        <p>The population size depends on the nature of the problem, but typically contains several hundreds or thousands of possible solutions. Often, the initial population is generated randomly, allowing the entire range of possible solutions (the search space). Occasionally, the solutions may be "seeded" in areas where optimal solutions are likely to be found.</p>
+        <li><h3>Selection</h3></li>
+        <p>During each successive generation, a proportion of the existing population is selected to breed a new generation. Individual solutions are selected through a fitness-based process, where fitter solutions (as measured by a fitness function) are typically more likely to be selected. Certain selection methods rate the fitness of each solution and preferentially select the best solutions. Other methods rate only a random sample of the population, as the former process may be very time-consuming.</p>
+            <p>The fitness function is defined over the genetic representation and measures the quality of the represented solution. The fitness function is always problem dependent. For instance, in the knapsack problem one wants to maximize the total value of objects that can be put in a knapsack of some fixed capacity. A representation of a solution might be an array of bits, where each bit represents a different object, and the value of the bit (0 or 1) represents whether or not the object is in the knapsack. Not every such representation is valid, as the size of objects may exceed the capacity of the knapsack. The fitness of the solution is the sum of values of all objects in the knapsack if the representation is valid, or 0 otherwise.</p>
+        <p>The next step is to generate a second generation population of solutions from those selected through a combination of genetic operators: crossover (also called recombination), and mutation.</p>
+        <li><h3>Genetic operators</h3></li>
+        <ol>
+            <li><b>Crossover</b></li>
+            <p>In genetic algorithms, crossover is a genetic operator used to vary the programming of a chromosome or chromosomes from one generation to the next. It is analogous to reproduction and biological crossover, upon which genetic algorithms are based. Cross over is a process of taking more than one parent solutions and producing a child solution from them. There are methods for selection of the chromosomes. Those are also given below.</p>
+            <li><b>Mutation</b></li>
+            <p>Mutation is a genetic operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. It is analogous to biological mutation. Mutation alters one or more gene values in a chromosome from its initial state. In mutation, the solution may change entirely from the previous solution. Hence GA can come to better solution by using mutation. Mutation occurs during evolution according to a user-definable mutation probability. This probability should be set low. If it is set too high, the search will turn into a primitive random search.</p>
+        </ol>
+        <p>For each new solution to be produced, a pair of "parent" solutions is selected for breeding from the pool selected previously. By producing a "child" solution using the above methods of crossover and mutation, a new solution is created which typically shares many of the characteristics of its "parents". New parents are selected for each new child, and the process continues until a new population of solutions of appropriate size is generated. Although reproduction methods that are based on the use of two parents are more "biology inspired", some research suggests that more than two "parents" generate higher quality chromosomes.</p>
+            <p>These processes ultimately result in the next generation population of chromosomes that is different from the initial generation. Generally the average fitness will have increased by this procedure for the population, since only the best organisms from the first generation are selected for breeding, along with a small proportion of less fit solutions. These less fit solutions ensure genetic diversity within the genetic pool of the parents and therefore ensure the genetic diversity of the subsequent generation of children.</p>
+        <p>It is worth tuning parameters such as the mutation probability, crossover probability and population size to find reasonable settings for the problem class being worked on. A very small mutation rate may lead to genetic drift (which is non-ergodic in nature). A recombination rate that is too high may lead to premature convergence of the genetic algorithm. A mutation rate that is too high may lead to loss of good solutions, unless elitist selection is employed.</p>
+        <li><h3>Termination</h3></li>
+        <ul>This generational process is repeated until a termination condition has been reached. Common terminating conditions are:
+            <li>A solution is found that satisfies minimum criteria</li>
+            <li>Fixed number of generations reached</li>
+            <li>Allocated budget (computation time/money) reached</li>
+            <li>The highest ranking solution's fitness is reaching or has reached a plateau such that successive iterations no longer produce better results</li>
+            <li>Manual inspection</li>
+            <li>Combinations of the above</li>
+        </ul>
+    </ul>
+    </div>
+</body>
