@@ -1,3 +1,3 @@
 # GA
-A simple javascript implementation of Genetic Algorithms with several options.
-Everything's embedded into a "bootstrapped" html file.
+A "bootstrapped" html file embeds a simple javascript implementation of Genetic Algorithms with several options.
+
